@@ -29,9 +29,9 @@ $patronymicUpd = mb_substr(mb_strtoupper($patronymic,'utf-8'),0,1,'utf-8').mb_su
 
 $fullName = "$surnameUpd $nameUpd $patronymicUpd";
 
-$fio = substr($surnameUpd, 0, 1) . substr($nameUpd, 0, 1) . substr($patronymicUpd, 0, 1);
+$fio = mb_substr($surnameUpd, 0, 1) . mb_substr($nameUpd, 0, 1) . mb_substr($patronymicUpd, 0, 1);
 
-$surnameAndInitials = "$surnameUpd " . substr($nameUpd, 0, 1) . substr($patronymicUpd, 0, 1);
+$surnameAndInitials = "$surnameUpd " . mb_substr($nameUpd, 0, 1) . '.' . mb_substr($patronymicUpd, 0, 1) . '.';
 
 echo PHP_EOL . "__________ Результат __________" . PHP_EOL;
 echo "Полное имя: $fullName" . PHP_EOL;
